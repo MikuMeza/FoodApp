@@ -1,4 +1,4 @@
-package com.mj.foodapp.ui.foodjoke
+package com.mj.foodapp.ui.fragment.favourite
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -12,15 +12,20 @@ import com.mj.foodapp.R
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
+/**
+ * A simple [Fragment] subclass.
+ * Use the [FavouriteRecipiesFragment.newInstance] factory method to
+ * create an instance of this fragment.
+ */
+class FavouriteRecipiesFragment : Fragment() {
 
-class FoodJokesFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_food_jokes, container, false)
+        return inflater.inflate(R.layout.fragment_favourite_recipies, container, false)
     }
 
 
