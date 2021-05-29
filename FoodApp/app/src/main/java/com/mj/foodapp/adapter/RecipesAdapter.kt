@@ -1,4 +1,4 @@
-package com.mj.foodapp
+package com.mj.foodapp.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,7 +8,6 @@ import com.mj.foodapp.databinding.RecipiesRowLayoutBinding
 import com.mj.foodapp.models.FoodRecipe
 import com.mj.foodapp.util.DiffUtility
 import com.mj.foodapp.models.Result
-import com.mj.foodapp.viewmodel.RecipiesViewModel
 
 class RecipesAdapter: RecyclerView.Adapter<RecipesAdapter.MyViewHolder>() {
 

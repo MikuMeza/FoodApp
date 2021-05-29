@@ -3,7 +3,7 @@ package com.mj.foodapp.util
 class Constants {
     companion object{
         const val BASE_URL = "https://api.spoonacular.com"
-        const val API_KEY = "4008ff7630164afd9e41bc1e704861a4"
+        const val API_KEY = "1748e4b82476437bb4ee0359fad418b4"
 
         // API Query Keys
         const val QUERY_NUMBER = "number"
@@ -12,5 +12,9 @@ class Constants {
         const val QUERY_DIET = "diet"
         const val QUERY_ADD_RECIPE_INFORMATION = "addRecipeInformation"
         const val QUERY_FILL_INGREDIENTS = "fillIngredients"
+
+        // ROOM Database
+        const val DATABASE_NAME = "recipes_database"
+        const val RECIPES_TABLE = "recipes_table"
     }
 }

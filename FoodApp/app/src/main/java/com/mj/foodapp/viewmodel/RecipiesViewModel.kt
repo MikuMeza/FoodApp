@@ -15,7 +15,7 @@ class RecipiesViewModel(application: Application):AndroidViewModel(application) 
         val queries: HashMap<String, String> = HashMap()
 
         queries[QUERY_NUMBER] = "50"
-        queries[QUERY_API_KEY] = API_KEY
+        queries[QUERY_API_KEY] = "1748e4b82476437bb4ee0359fad418b4"
         queries[QUERY_TYPE] = "snack"
         queries[QUERY_DIET] = "vegan"
         queries[QUERY_ADD_RECIPE_INFORMATION] = "true"
