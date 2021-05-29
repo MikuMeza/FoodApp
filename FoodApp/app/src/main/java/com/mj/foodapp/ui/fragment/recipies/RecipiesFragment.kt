@@ -52,9 +52,11 @@ class RecipiesFragment : Fragment() {
         lifecycleScope.launch {
             mainViewModel.readRecipies.observe(viewLifecycleOwner, { database ->
                 if (database.isNotEmpty()) {
+                    //if database not empty get data from ROOM database
                     mAdapter.setData(database[0].foodRecipe)
                     hideShimmerEffect()
                 } else {
+                    //database empty so call api
                     getRecipiesApi()
                 }
             })
@@ -72,6 +74,7 @@ class RecipiesFragment : Fragment() {
                         response.data?.let { mAdapter.setData(it) }
                     }
                     is NetworkResult.Error -> {
+                        //error response returned so loading data from database
                         loadDataFromCache()
                         hideShimmerEffect()
                         Toast.makeText(
