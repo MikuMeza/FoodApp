@@ -3,21 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/my_nav"
-    app:startDestination="@id/recipiesFragment">
+    app:startDestination="@id/recipesFragment">
 
     <fragment
-        android:id="@+id/recipiesFragment"
-        android:name="com.mj.foodapp.recipiesFragment"
-        android:label="fragment_recipies"
+        android:id="@+id/recipesFragment"
+        android:name="com.mj.foodapp.ui.fragment.recipies.RecipiesFragment"
+        android:label="Recipes"
         tools:layout="@layout/fragment_recipies" />
     <fragment
-        android:id="@+id/favouriteRecipiesFragment"
-        android:name="com.mj.foodapp.FavouriteRecipiesFragment"
-        android:label="fragment_favourite_recipies"
+        android:id="@+id/favoriteRecipesFragment"
+        android:name="com.mj.foodapp.ui.fragment.favourite.FavouriteRecipiesFragment"
+        android:label="Favorites"
         tools:layout="@layout/fragment_favourite_recipies" />
     <fragment
-        android:id="@+id/foodJokesFragment"
-        android:name="com.mj.foodapp.FoodJokesFragment"
-        android:label="fragment_food_jokes"
+        android:id="@+id/foodJokeFragment"
+        android:name="com.mj.foodapp.ui.fragment.foodjoke.FoodJokesFragment"
+        android:label="Food Joke"
         tools:layout="@layout/fragment_food_jokes" />
 </navigation>
