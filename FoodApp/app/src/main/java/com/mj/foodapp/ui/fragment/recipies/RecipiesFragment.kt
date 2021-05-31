@@ -47,6 +47,7 @@ class RecipiesFragment : Fragment() {
         readDatabase()
 
         binding.recipesFab.setOnClickListener {
+            //navigation to bottomsheet dialog
             findNavController().navigate(R.id.action_recipesFragment_to_recipeBottomFragment)
         }
 
