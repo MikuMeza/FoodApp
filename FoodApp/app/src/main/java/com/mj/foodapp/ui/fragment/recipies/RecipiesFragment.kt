@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mj.foodapp.R
 import com.mj.foodapp.adapter.RecipesAdapter
@@ -44,6 +45,11 @@ class RecipiesFragment : Fragment() {
 
         setupRecyclerView()
         readDatabase()
+
+        binding.recipesFab.setOnClickListener {
+            //navigation to bottomsheet dialog
+            findNavController().navigate(R.id.action_recipesFragment_to_recipeBottomFragment)
+        }
 
         return binding.root
     }
