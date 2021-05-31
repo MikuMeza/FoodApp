@@ -3,7 +3,7 @@ package com.mj.foodapp.util
 class Constants {
     companion object{
         const val BASE_URL = "https://api.spoonacular.com"
-        const val API_KEY = "134b36d83d8e48839e7346d2c16a07cc"
+        const val API_KEY = "266e72ac9e4347f38b220f3cb1feaf02"
 
         // API Query Keys
         const val QUERY_NUMBER = "number"
