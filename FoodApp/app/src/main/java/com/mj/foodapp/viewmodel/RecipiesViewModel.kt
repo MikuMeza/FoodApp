@@ -34,6 +34,7 @@ class RecipiesViewModel @ViewModelInject constructor(
         dietType: String,
         dietTypeId: Int
     ) {
+
         viewModelScope.launch(Dispatchers.IO) {
             dataStoreRepository.saveMealAndDietType(mealType, mealTypeId, dietType, dietTypeId)
         }
