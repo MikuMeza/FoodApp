@@ -51,6 +51,7 @@ class MainViewModel @ViewModelInject constructor(
                     val recipes = recipesResponse.value!!.data
                     if (recipes != null)
                         offlineCacheResponse(recipes)
+                   
 
                 } catch (ex: Exception) {
                     recipesResponse.value = NetworkResult.Error("No Result")
