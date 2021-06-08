@@ -45,7 +45,8 @@ class RecipiesFragment : Fragment() {
         // Inflate the layout for this fragment
 //        mView = inflater.inflate(R.layout.fragment_recipies, container, false)
         binding = FragmentRecipiesBinding.inflate(inflater, container, false)
-
+        binding.lifecycleOwner = this
+        binding.mainViewModel = mainViewModel
         setupRecyclerView()
         readDatabase()
 
@@ -59,7 +60,7 @@ class RecipiesFragment : Fragment() {
 
     fun readDatabase() {
         lifecycleScope.launch {
-            mainViewModel.readRecipies.observe(viewLifecycleOwner, { database ->
+            mainViewModel.readRecipies.observeOnce(viewLifecycleOwner, { database ->
                 if (database.isNotEmpty()&&!args.backFromBottomSheet) {
                     //if database not empty get data from ROOM database
                     mAdapter.setData(database[0].foodRecipe)
@@ -70,7 +71,6 @@ class RecipiesFragment : Fragment() {
                 }
             })
         }
-
     }
 
     fun getRecipiesApi() {
