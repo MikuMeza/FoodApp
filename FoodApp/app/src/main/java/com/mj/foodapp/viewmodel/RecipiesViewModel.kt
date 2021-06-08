@@ -23,36 +23,30 @@ class RecipiesViewModel @ViewModelInject constructor(
     application: Application,
     private val dataStoreRepository: DataStoreRepository
 ) : AndroidViewModel(application) {
-    var mealType = DEFAULT_MEAL_TYPE
-    var dietTYpe = DEFAULT_DIET_TYPE
+    private var mealType = DEFAULT_MEAL_TYPE
+    private var dietType = DEFAULT_DIET_TYPE
 
     val readMealAndDietType = dataStoreRepository.readMealAndDietType
 
-    fun saveMealandDietType(
-        mealType: String,
-        mealTypeId: Int,
-        dietType: String,
-        dietTypeId: Int
-    ) {
-
+    fun saveMealAndDietType(mealType: String, mealTypeId: Int, dietType: String, dietTypeId: Int) =
         viewModelScope.launch(Dispatchers.IO) {
             dataStoreRepository.saveMealAndDietType(mealType, mealTypeId, dietType, dietTypeId)
         }
-    }
 
     fun applyQueries(): HashMap<String, String> {
         val queries: HashMap<String, String> = HashMap()
+
         viewModelScope.launch {
-            readMealAndDietType.collect { data ->
-                mealType = data.selectedMealType
-                dietTYpe = data.selectedDietType
+            readMealAndDietType.collect { value ->
+                mealType = value.selectedMealType
+                dietType = value.selectedDietType
             }
         }
 
         queries[QUERY_NUMBER] = DEFAULT_RECIPES_NUMBER
         queries[QUERY_API_KEY] = API_KEY
         queries[QUERY_TYPE] = mealType
-        queries[QUERY_DIET] = dietTYpe
+        queries[QUERY_DIET] = dietType
         queries[QUERY_ADD_RECIPE_INFORMATION] = "true"
         queries[QUERY_FILL_INGREDIENTS] = "true"
 
